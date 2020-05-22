@@ -9,33 +9,29 @@
     android:background="#E5F1D1">
 
     <TextView
+        android:id="@+id/txvWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello Portrait!"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        app:layout_constraintVertical_bias="0.31"
-        android:id="@+id/txvWelcome"/>
+        app:layout_constraintVertical_bias="0.31" />
 
     <Button
-        android:text="Show Message"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/btnShowToast"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="39dp"
+        android:text="Show Login Screen"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="@dimen/buttonTopMargin"
-        app:layout_constraintTop_toBottomOf="@+id/txvWelcome"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintVertical_bias="0.352"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txvWelcome" />
 
 
 

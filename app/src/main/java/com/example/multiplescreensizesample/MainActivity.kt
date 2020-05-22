@@ -1,5 +1,6 @@
 package com.example.multiplescreensizesample
 
+import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -20,10 +21,10 @@ class MainActivity : AppCompatActivity() {
 
             btnShowToast.setOnClickListener {
                 val txvWelcome = findViewById<TextView>(R.id.txvWelcome)
+                //Toast.makeText(this, "${txvWelcome.height}", Toast.LENGTH_SHORT).show()
 
-                Log.i("Main Activity", "{marginValue: ${txvWelcome.height}")
-                Toast.makeText(this, "${txvWelcome.height}", Toast.LENGTH_SHORT).show()
-
+                val intent = Intent(this, ConstraintsLayout::class.java)
+                startActivity(intent)
             }
         } else {
             btnShowToast.setOnClickListener {
