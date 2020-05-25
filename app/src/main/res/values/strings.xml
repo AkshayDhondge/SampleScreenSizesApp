@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">MultipleScreenSizeSample</string>
+    <string name="already_have_an_account_n_login_here">Already have an account?\n Login here</string>
+    <string name="register">Register</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="don_t_have_an_account_n_register_here">Don\'t have an account?\n Register here</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="welcome_to_profile">Welcome to profile</string>
 </resources>

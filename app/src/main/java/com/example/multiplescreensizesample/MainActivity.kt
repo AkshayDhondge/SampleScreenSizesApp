@@ -4,10 +4,8 @@ import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.view.marginTop
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -20,10 +18,7 @@ class MainActivity : AppCompatActivity() {
         if (resources.configuration.orientation == Configuration.ORIENTATION_PORTRAIT) {
 
             btnShowToast.setOnClickListener {
-                val txvWelcome = findViewById<TextView>(R.id.txvWelcome)
-                //Toast.makeText(this, "${txvWelcome.height}", Toast.LENGTH_SHORT).show()
-
-                val intent = Intent(this, ConstraintsLayout::class.java)
+                val intent = Intent(this, LoginActivity::class.java)
                 startActivity(intent)
             }
         } else {
