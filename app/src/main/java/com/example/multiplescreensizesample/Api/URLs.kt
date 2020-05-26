@@ -1,4 +1,4 @@
-package com.example.multiplescreensizesample
+package com.example.multiplescreensizesample.Api
 
 object URLs {
     private val ROOT_URL = "https://192.168.1.35/androidphpmysql/registrationapi.php?apicall="

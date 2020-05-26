@@ -1,4 +1,4 @@
-package com.example.multiplescreensizesample
+package com.example.multiplescreensizesample.Activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,6 +10,10 @@ import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
+import com.example.multiplescreensizesample.Api.URLs
+import com.example.multiplescreensizesample.Models.SharedPrefManager
+import com.example.multiplescreensizesample.Models.User
+import com.example.multiplescreensizesample.R
 import kotlinx.android.synthetic.main.activity_register.*
 import org.json.JSONException
 import org.json.JSONObject
@@ -94,17 +98,17 @@ class RegisterActivity : AppCompatActivity() {
 
                         val userJson = obj.getJSONObject("user")
 
-                        val user = User(
-                            userJson.getInt("id"),
-                            userJson.getString("username"),
-                            userJson.getString("email"),
-                            userJson.getString("gender")
-                        )
+                        val user =
+                            User(
+                                userJson.getInt("id"),
+                                userJson.getString("username"),
+                                userJson.getString("email")
+                            )
 
                         SharedPrefManager.getInstance(applicationContext).userLogin(user)
 
                         finish()
-                        startActivity(Intent(applicationContext, HomeActivity::class.java))
+                        startActivity(Intent(applicationContext, MyIntentService::class.java))
                     } else {
                         Toast.makeText(
                             applicationContext,
