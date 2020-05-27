@@ -10,6 +10,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -25,6 +26,7 @@ import com.example.multiplescreensizesample.R
 import com.squareup.okhttp.FormEncodingBuilder
 import com.squareup.okhttp.OkHttpClient
 import com.squareup.okhttp.RequestBody
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_login.*
 import okio.Buffer
 import org.json.JSONException
@@ -38,6 +40,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var etName: EditText
     private lateinit var etPassword: EditText
     private lateinit var progressBar: ProgressBar
+    private lateinit var imageView: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,6 +59,12 @@ class LoginActivity : AppCompatActivity() {
         etName = findViewById(R.id.etUserName)
         etPassword = findViewById(R.id.etPassword)
         progressBar = findViewById(R.id.progressBar)
+        imageView = findViewById(R.id.imageView)
+
+        val url =
+            "https://cdn.pixabay.com/photo/2017/11/06/18/39/apple-2924531_960_720.jpg"
+        Picasso.with(this).load(url).placeholder(R.drawable.mission)
+            .error(R.drawable.mission).noFade().into(imageView);
 
 
         btnLogin.setOnClickListener {
@@ -69,7 +78,7 @@ class LoginActivity : AppCompatActivity() {
 
     }
 
-    private fun OpenHomeScreen(){
+    private fun OpenHomeScreen() {
         intent = Intent(this, MyIntentService::class.java)
         startService(intent)
     }
@@ -281,7 +290,7 @@ fun postServerCall(
             .build()
         val response = client.newCall(request).execute()
         val statusCode = response.code()
-        Log.i("LoginActivity","StatusCode:$statusCode")
+        Log.i("LoginActivity", "StatusCode:$statusCode")
         val status = response.isSuccessful
         val res = response.body().string()
         return res
